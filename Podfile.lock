@@ -1,0 +1,71 @@
+PODS:
+  - AppleGuice (1.2.4)
+  - FLUX (0.0.2):
+    - KVOController
+    - libextobjc
+  - Kiwi (2.4.0)
+  - KVOController (1.0.3)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
+
+DEPENDENCIES:
+  - AppleGuice
+  - FLUX (from `https://github.com/techery/FLUX.git`, tag `0.0.2`)
+  - Kiwi
+  - Mantle
+
+EXTERNAL SOURCES:
+  FLUX:
+    :git: https://github.com/techery/FLUX.git
+    :tag: 0.0.2
+
+CHECKOUT OPTIONS:
+  FLUX:
+    :git: https://github.com/techery/FLUX.git
+    :tag: 0.0.2
+
+SPEC CHECKSUMS:
+  AppleGuice: 3cf349eaca213180039725cc449dfccff19cfe3f
+  FLUX: fb8649224aa53005b3115c7cb8322be48b866c4c
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
+
+COCOAPODS: 0.38.2
