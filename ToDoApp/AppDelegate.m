@@ -17,6 +17,7 @@
 
 + (void)initialize {
     [AppleGuice startService];
+    [AppleGuice setInstanceCreationPolicy:AppleGuiceInstanceCreationPolicySingletons];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

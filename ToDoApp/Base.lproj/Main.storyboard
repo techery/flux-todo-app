@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--List Table View Controller-->
@@ -15,15 +16,28 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nr4-2o-3ZX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TDACellIdentifier" textLabel="NqF-Hy-2eT" style="IBUITableViewCellStyleDefault" id="nr4-2o-3ZX">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nr4-2o-3ZX" id="Tm6-B8-lnO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Implement flux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NqF-Hy-2eT">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="x3D-AK-ez0" kind="push" id="cNF-ji-Eaa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,21 +52,28 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <segments>
-                                <segment title="All"/>
+                                <segment title="TODO"/>
                                 <segment title="Done"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlValueChanged:" destination="km4-wX-3SS" eventType="valueChanged" id="lHz-bt-W8N"/>
+                            </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1wG-Eg-aX4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1wG-Eg-aX4">
+                            <connections>
+                                <segue destination="x3D-AK-ez0" kind="push" identifier="" id="Dae-ci-ZA7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="x3D-AK-ez0" kind="push" id="uk2-vB-5xA"/>
+                        <outlet property="segmentedControl" destination="B3L-35-uTN" id="VmC-5R-ZOy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vd8-Qi-4zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="815"/>
+            <point key="canvasLocation" x="128" y="815"/>
         </scene>
-        <!--Edit-->
+        <!--Create-->
         <scene sceneID="KXk-PE-oqS">
             <objects>
                 <viewController id="x3D-AK-ez0" customClass="TDADetailsViewController" sceneMemberID="viewController">
@@ -63,14 +84,36 @@
                     <view key="view" contentMode="scaleToFill" id="RWK-qJ-w5I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAy-FU-gns">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gAy-FU-gns" firstAttribute="trailing" secondItem="RWK-qJ-w5I" secondAttribute="trailingMargin" id="RnV-TX-dbD"/>
+                            <constraint firstItem="gAy-FU-gns" firstAttribute="top" secondItem="cSe-Yx-JpI" secondAttribute="bottom" constant="8" id="su0-Er-f4z"/>
+                            <constraint firstItem="gAy-FU-gns" firstAttribute="leading" secondItem="RWK-qJ-w5I" secondAttribute="leadingMargin" id="tNC-ba-Hba"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit" id="0bg-Zi-vka"/>
+                    <navigationItem key="navigationItem" title="Create" id="0bg-Zi-vka">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RVX-nb-uv9">
+                            <connections>
+                                <action selector="save:" destination="x3D-AK-ez0" id="f4F-kK-tSy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="gAy-FU-gns" id="zIS-Kb-Dmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gql-44-9Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539.73333333333335" y="815.08000000000004"/>
+            <point key="canvasLocation" x="539" y="815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dWv-0L-igt">
@@ -90,4 +133,7 @@
             <point key="canvasLocation" x="-304" y="815.08000000000004"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dae-ci-ZA7"/>
+    </inferredMetricsTieBreakers>
 </document>

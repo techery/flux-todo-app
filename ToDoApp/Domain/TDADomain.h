@@ -11,7 +11,7 @@
 
 @class TDAToDoStore;
 
-@interface TDADomain : TEDomain <AppleGuiceSingleton>
+@interface TDADomain : TEDomain <AppleGuiceSingleton, AppleGuiceInjectable>
 
 - (TDAToDoStore *)toDoStore;
 

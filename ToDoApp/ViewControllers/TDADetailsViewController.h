@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDAToDoItem.h"
 
 @interface TDADetailsViewController : UIViewController
+
+@property (nonatomic, strong) TDAToDoItem *item;
 
 @end
