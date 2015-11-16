@@ -44,9 +44,7 @@
 }
 
 - (void)updateItem {
-    @weakify(self);
     TDAToDoItem *newItem = [TDAToDoItem create:^(TDAToDoItemBuilder *builder) {
-        @strongify(self);
         builder.uuid = self.item.uuid;
         builder.isDone = self.item.isDone;
         builder.createdAt = self.item.createdAt;
@@ -60,9 +58,7 @@
 }
 
 - (void)createItem {
-    @weakify(self);
     TDAOnToDoItemInsert *createItemAction = [TDAOnToDoItemInsert create:^(TDAOnToDoItemInsertBuilder *builder) {
-        @strongify(self);
         builder.text = self.textField.text;
     }];
     [self.ioc_domain dispatchAction:createItemAction];
